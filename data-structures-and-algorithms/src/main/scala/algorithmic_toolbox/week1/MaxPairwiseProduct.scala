@@ -7,7 +7,7 @@ object MaxPairwiseProduct {
   def getMaxPairwiseProduct(numbers: Array[Int]): BigInt = {
     val nums = numbers.sorted
     val n = numbers.length - 1
-    BigInt(nums(n)) *BigInt(nums(n-1))
+    BigInt(nums(n)) * BigInt(nums(n-1))
   }
 
   def main(args: Array[String]): Unit = {
