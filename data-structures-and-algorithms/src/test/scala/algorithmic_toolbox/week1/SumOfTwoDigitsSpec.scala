@@ -19,7 +19,8 @@ class SumOfTwoDigitsSpec extends FlatSpec with Matchers {
     val expectedResult: String = inputDataString.split(" ").map(_.toInt).sum.toString
     it should s"calculate $expectedResult with an input of $inputDataString" in {
       Console.withIn(inputData){
-        SumOfTwoDigits.generateResult shouldEqual expectedResult
+        val reader = Reader()
+        SumOfTwoDigits.generateResult(reader) shouldEqual expectedResult
       }
     }
   }
@@ -34,13 +35,14 @@ class SumOfTwoDigitsSpec extends FlatSpec with Matchers {
   "SumOfTwoDigits" should "return 3 as string with input \"1 2\"" in {
     val inputData = generateInputData("1 2")
     Console.withIn(inputData) {
-      Reader()
-      SumOfTwoDigits.generateResult shouldEqual "3"
+      val reader = Reader()
+      SumOfTwoDigits.generateResult(reader) shouldEqual "3"
     }
   }
 
   it should "calculate 14 as string for input \"7 7\"" in {
-    Reader()
+    val reader = Reader(List("7 7"))
+    SumOfTwoDigits.generateResult(reader) shouldEqual "14"
 
   }
 

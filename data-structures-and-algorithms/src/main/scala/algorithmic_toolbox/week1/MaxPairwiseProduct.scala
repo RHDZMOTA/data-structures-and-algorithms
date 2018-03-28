@@ -10,9 +10,9 @@ object MaxPairwiseProduct {
     BigInt(nums(n)) * BigInt(nums(n-1))
   }
 
-  def generateResult: String = {
-    val n: Int = Reader.readInt.get
-    val numbers: Array[Int] = Reader.readLine.get
+  def generateResult(reader: Reader): String = {
+    val n: Int = reader.readInt.get
+    val numbers: Array[Int] = reader.readLine.get
       .split(" ")
       .map(_.toInt)
 
@@ -20,7 +20,7 @@ object MaxPairwiseProduct {
   }
 
   def main(args: Array[String]): Unit = {
-    Reader() // configure reader to get the data from the standard input
-    println(generateResult)
+    val reader = Reader() // configure reader to get the data from the standard input
+    println(generateResult(reader))
   }
 }
