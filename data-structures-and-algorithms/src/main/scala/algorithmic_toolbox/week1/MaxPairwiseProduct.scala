@@ -1,6 +1,5 @@
 package algorithmic_toolbox.week1
 
-import scala.io.StdIn
 import algorithmic_toolbox.util.input.Reader
 
 object MaxPairwiseProduct {
@@ -21,7 +20,7 @@ object MaxPairwiseProduct {
   }
 
   def main(args: Array[String]): Unit = {
-    Reader() // configure reader to read the data from the standard input
+    Reader() // configure reader to get the data from the standard input
     println(generateResult)
   }
 }

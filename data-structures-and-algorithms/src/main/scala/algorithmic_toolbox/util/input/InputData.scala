@@ -16,27 +16,6 @@ sealed trait InputData {
 }
 
 final case object StdInput extends InputData
+
 final case class StringInput(inputList: List[String]) extends InputData
 
-/**
-case object Reader {
-  var stack: List[InputData] = List.empty[InputData]
-
-  def apply(): Unit =
-    stack = List(StdInput)
-
-  def apply(data: List[String]): Unit =
-    stack = List(StringInput(data))
-
-  def applyMethod[T](fn: InputData => (InputData, T)): T = {
-    val (inputData, result) = fn(stack.head)
-    stack = inputData :: stack
-    result
-  }
-
-  def readInt: Int = applyMethod[Int](_.readInt)
-
-  def readLine: String = applyMethod[String](_.readLine)
-
-}
-  **/

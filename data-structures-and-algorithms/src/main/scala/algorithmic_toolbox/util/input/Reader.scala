@@ -18,12 +18,6 @@ object Reader {
       Some(result)
   }
 
-  def applyMethod2[T](fn: InputData => (InputData, T)): T = {
-    val (inputData, result) = fn(stack.head)
-    stack = inputData :: stack
-    result
-  }
-
   def readInt: Option[Int] = applyMethod[Int](_.readInt)
 
   def readLine: Option[String] = applyMethod[String](_.readLine)

@@ -1,6 +1,5 @@
 package algorithmic_toolbox.week1
 
-import scala.io.StdIn
 import algorithmic_toolbox.util.input.Reader
 
 object SumOfTwoDigits {
