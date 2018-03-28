@@ -1,13 +1,17 @@
 package algorithmic_toolbox.week1
 
 import scala.io.StdIn
+import algorithmic_toolbox.util.input.Reader
 
 object SumOfTwoDigits {
-  def main(args: Array[String]): Unit = {
-    val result: Int = StdIn.readLine()
-      .split(" ")
-      .foldLeft(0) {(acc, x) => acc + x.toInt}
 
-    println(result)
+  def generateResult: String = Reader.readLine.getOrElse("")
+    .split(" ")
+    .foldLeft(0) {(acc, x) => acc + x.toInt}
+    .toString
+
+  def main(args: Array[String]): Unit = {
+    Reader() // configure reader to get the data from the standard input
+    println(generateResult)
   }
 }
